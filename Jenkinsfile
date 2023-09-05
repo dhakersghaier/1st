@@ -35,7 +35,7 @@ pipeline {
                     // Deployment steps
                     // For example, you can use a tool like PM2 to run your Node.js app
                     sh 'npm install pm2'
-                    sh './node_modules/pm2/bin/pm2 start app.js'
+                    sh './node_modules/pm2/bin/pm2 start server.js'
                 }
             }
         
