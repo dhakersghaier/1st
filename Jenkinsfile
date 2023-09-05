@@ -8,6 +8,17 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/dhakersghaier/1st']]])
             }
         }
+        stage('Install Dependencies') {
+           steps {
+               script {
+                 // Change to the directory where package.json is located
+                   dir('1st/package.json') {
+                // Install project dependencies locally
+                    sh 'npm ci'
+                       }
+         }
+    }
+}
 
         stage('Build and Test') {
             steps {
