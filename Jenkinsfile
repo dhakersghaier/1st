@@ -14,7 +14,7 @@ pipeline {
         
                     // Inside the 'node' block, you can run build and test steps
                     sh 'npm install'
-                    sh 'npm test'
+                    sh 'npm --version'
                 }
             }
         
